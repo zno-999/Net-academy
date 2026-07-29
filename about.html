@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>NetAcademy - من نحن</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0a0814, #1b143f);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .landing-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            padding: 40px;
+            color: #1e1b4b;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: #64748b;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: #f97316;
+            font-weight: bold;
+        }
+        .page-title {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+        .about-content p {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        /* أقسام مميزة داخل من نحن */
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .feature-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .feature-box h4 {
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .feature-box p {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+        .footer-logo {
+            margin-top: 35px;
+            font-weight: bold;
+            color: #0f172a;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="landing-card">
+        <!-- شريط التنقل -->
+        <header>
+            <nav>
+                <a href="new.html">الرئيسية</a>
+                <a href="courses.html">الدورات</a>
+                <a href="about.html" class="active">من نحن</a>
+                <a href="contactus.html">تواصل معنا</a>
+            </nav>
+            <div style="font-weight: bold; color: #1e1b4b; cursor: pointer;">☰</div>
+        </header>
+
+        <!-- المحتوى الرئيسي -->
+        <div class="about-content">
+            <h1 class="page-title">من نحن</h1>
+            <p>
+                نحن منصة تعليمية رقمية متخصصة تهدف إلى تبسيط مفاهيم <strong>شبكات الحاسوب</strong> و<strong>أنظمة التشغيل</strong>. نسعى لتقديم محتوى تقني عالي الجودة يجمع بين الفهم النظري والتطبيق العملي لتمكين الطلاب والمحترفين من بناء مسيرة تقنية ناجحة.
+            </p>
+            
+            <div class="features-row">
+                <div class="feature-box">
+                    <h4>رؤيتنا</h4>
+                    <p>أن نكون المرجع العربي الأول والأكثر سهولة لتعلم تقنيات الشبكات وإدارة الأنظمة الحديثة.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>رسالتنا</h4>
+                    <p>توفير مسارات تعليمية تفاعلية ومبسطة تذلل الصعاب أمام المبتدئين وتطور مهارات المحترفين.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-logo">
+            NET • ACADEMY
+        </div>
+    </div>
+
+</body>
+</html>

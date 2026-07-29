@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>NetAcademy - الصفحة الرئيسية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+
+        /* المتغيرات الخاصة بالوضع الليلي والنهاري */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0a0814, #1b143f);
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --nav-color: #64748b;
+            --nav-active: #f97316;
+            --ill-gradient: linear-gradient(135deg, #1e1b4b, #312e81);
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="light"] {
+            --bg-gradient: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --nav-color: #475569;
+            --nav-active: #f97316;
+            --ill-gradient: linear-gradient(135deg, #ffedd5, #fed7aa);
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .landing-card {
+            background: var(--card-bg);
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            padding: 40px;
+            color: var(--text-main);
+            animation: fadeInCard 0.8s ease-out; /* تأثير حركي لظهور البطاقة */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        nav a {
+            color: var(--nav-color);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--nav-active);
+            font-weight: bold;
+        }
+
+        .actions-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* زر تبديل الوضع */
+        .theme-toggle-btn {
+            background: none;
+            border: 2px solid var(--nav-color);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .theme-toggle-btn:hover {
+            border-color: #f97316;
+            color: #f97316;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .text-section {
+            flex: 1;
+            animation: slideRight 0.8s ease-out; /* تأثير حركي للنصوص */
+        }
+
+        .text-section h1 {
+            font-size: 42px;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .text-section p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .learn-btn {
+            background: #f97316;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .learn-btn:hover {
+            background: #ea580c;
+            transform: scale(1.05);
+        }
+
+        .illustration-section {
+            flex: 1;
+            background: var(--ill-gradient);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            height: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideLeft 0.8s ease-out; /* تأثير حركي للقسم البصري */
+        }
+
+        .illustration-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+            transition: transform 0.5s ease;
+        }
+
+        .illustration-section img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-logo {
+            margin-top: 40px;
+            font-weight: bold;
+            color: var(--text-main);
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* تعريف الحركات (Animations) */
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <div class="landing-card">
+        <!-- شريط التنقل -->
+        <header>
+            <nav>
+                <a href="new.html" class="active">الرئيسية</a>
+                <a href="courses.html">الدورات</a>
+                <a href="about.html">من نحن</a>
+                <a href="contactus.html">تواصل معنا</a>
+            </nav>
+            <div class="actions-header">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️ الوضع النهاري</button>
+                <div style="font-weight: bold; cursor: pointer; color: var(--text-main);" onclick="alert('القائمة الجانبية مفعمة بالخيارات التقنية!')">☰</div>
+            </div>
+        </header>
+
+        <!-- المحتوى الرئيسي -->
+        <div class="content">
+            <div class="text-section">
+                <h1>احتراف <br>الشبكات وأنظمة التشغيل</h1>
+                <p>اكتشف مساراً تعليمياً متكاملاً يغطي نماذج الاتصال، البروتوكولات، خوارزميات جدولة المعالج، وإدارة الأنظمة بخطوات عملية مبسطة.</p>
+                <button class="learn-btn" id="startBtn">ابدأ التعلم</button>
+            </div>
+
+            <!-- الرسمة التوضيحية -->
+            <div class="illustration-section">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Networking Illustration">
+            </div>
+        </div>
+
+        <!-- الشعار -->
+        <div class="footer-logo">
+            NET • ACADEMY
+        </div>
+    </div>
+
+    <!-- كود الجافا سكربت للوضع الليلي والحركات -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const body = document.body;
+
+        function toggleTheme() {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                themeToggleBtn.textContent = '🌙 الوضع الليلي';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggleBtn.textContent = '☀️ الوضع النهاري';
+            }
+        }
+
+        // تفاعل زر ابدأ التعلم
+        const startBtn = document.getElementById('startBtn');
+        startBtn.addEventListener('click', function() {
+            alert('أهلاً بك! جاري تجهيز مسار دراسة الشبكات وأنظمة التشغيل خصيصاً لك 🚀');
+            document.querySelector('.text-section h1').innerHTML = 'مرحباً بك في رحلة الاحتراف!';
+        });
+    </script>
+
+</body>
+</html>
